@@ -20,7 +20,7 @@ jobs:
     - name: Run Docker Container
       run: |
         docker run -d --name flappybird-container flappybird-app
-        sleep 5m
+        sleep 1m
 
     - name: Stop and Remove Docker Container
       run: docker stop flappybird-container && docker rm flappybird-container
