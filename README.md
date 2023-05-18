@@ -14,7 +14,7 @@ To run the Flappy Bird AI, you need to have the following dependencies installed
 You can install the required dependencies by running the following command:
 
 ```
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 
 ## Getting Started
