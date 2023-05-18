@@ -20,17 +20,21 @@ jobs:
       - name: Run tests in Docker container with timeout
         run: |
           docker run --name myapp-container -d myapp
-          timeout 10m docker exec myapp-container python -m unittest discover
+          timeout 30s docker exec myapp-container python -m unittest discover
           test_exit_code=$?
-          docker stop myapp-container
-          docker rm myapp-container
           if [ $test_exit_code -eq 0 ]; then
             echo "Tests passed"
+            docker stop myapp-container
+            docker rm myapp-container
             exit 0
           elif [ $test_exit_code -eq 124 ]; then
             echo "Test timed out"
+            docker stop myapp-container
+            docker rm myapp-container
             exit 1
           else
             echo "Tests failed with exit code $test_exit_code"
+            docker stop myapp-container
+            docker rm myapp-container
             exit $test_exit_code
           fi
