@@ -20,8 +20,8 @@ jobs:
       - name: Run tests in Docker container
         run: |
           docker run --name myapp-container -d myapp
-          docker exec myapp-container pip install pytest
-          docker exec myapp-container pytest /app/tests --timeout=30
+          docker exec myapp-container pip install pytest pytest-timeout
+          docker exec myapp-container pytest /app/tests --timeout=30 --timeout-method=thread
           test_exit_code=$?
           if [ $test_exit_code -eq 0 ]; then
             echo "Tests passed"
