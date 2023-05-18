@@ -24,7 +24,7 @@ To run the Flappy Bird AI, follow these steps:
 
 2. Open a terminal or command prompt and navigate to the project directory.
 
-3. Run the `flappy_bird_ai.py` file using Python:
+3. Run the `main.py` file using Python:
 
 4. The AI agent will start training using the NEAT algorithm. You can observe the progress in the console output.
 
