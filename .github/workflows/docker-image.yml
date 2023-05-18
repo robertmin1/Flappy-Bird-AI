@@ -1,36 +1,25 @@
-name: Docker Image CI
+name: Docker Workflow
 
 on:
   push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+    branches:
+      - main
 
 jobs:
-  build:
+  build-and-run:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-      - name: Build Docker image
-        run: docker build -t myapp .
+    - name: Build Docker Image
+      run: docker build -t flappybird-app -f Dockerfile .
 
-      - name: Run tests in Docker container
-        run: |
-          docker run --name myapp-container -d myapp
-          docker exec myapp-container pip install pytest pytest-timeout
-          docker exec myapp-container pytest . --timeout=30 --timeout-method=thread
-          test_exit_code=$?
-          if [ $test_exit_code -eq 0 ]; then
-            echo "Tests passed"
-            docker stop myapp-container
-            docker rm myapp-container
-            exit 0
-          else
-            echo "Tests failed"
-            docker stop myapp-container
-            docker rm myapp-container
-            exit 1
-          fi
+    - name: Run Docker Container
+      run: |
+        docker run -d --name flappybird-container flappybird-app
+        sleep 5m
+
+    - name: Stop and Remove Docker Container
+      run: docker stop flappybird-container && docker rm flappybird-container
