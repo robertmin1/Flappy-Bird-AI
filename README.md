@@ -1,4 +1,4 @@
-# Flappy Bird AI
+# EAT Flappy Bird AI Trainer.
 
 This project implements an AI agent that plays the classic game of Flappy Bird using the NEAT (NeuroEvolution of Augmenting Topologies) algorithm. The AI agent learns to navigate through a series of pipes by evolving a neural network through genetic algorithms.
 
