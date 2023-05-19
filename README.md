@@ -16,6 +16,15 @@ You can install the required dependencies by running the following command:
 ```
 pip install -r requirements.txt
 ```
+## DEMO
+
+https://github.com/robertmin1/Flappy-Bird-AI/assets/104002271/44f4e7f8-e4c3-45cb-bd4b-b96221407474
+
+It starts with a population of birds, each with a neural network as its brain. Through multiple generations, the 
+AI evolves by selecting the fittest birds and using genetic algorithms to create offspring. The AI learns to play 
+the game by improving its neural network's decision-making based on inputs like position and distance. 
+Eventually, it can autonomously play the game by making learned decisions, aiming for a high score.
+
 
 ## Getting Started
 To run the Flappy Bird AI, follow these steps:
