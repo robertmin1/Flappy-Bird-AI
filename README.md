@@ -1,4 +1,4 @@
-# Flappy Bird AI
+# NEAT Flappy Bird AI Trainer.
 
 This project implements an AI agent that plays the classic game of Flappy Bird using the NEAT (NeuroEvolution of Augmenting Topologies) algorithm. The AI agent learns to navigate through a series of pipes by evolving a neural network through genetic algorithms.
 
@@ -14,8 +14,17 @@ To run the Flappy Bird AI, you need to have the following dependencies installed
 You can install the required dependencies by running the following command:
 
 ```
-pip install pygame neat-python graphviz
+pip install -r requirements.txt
 ```
+## DEMO
+
+https://github.com/robertmin1/Flappy-Bird-AI/assets/104002271/44f4e7f8-e4c3-45cb-bd4b-b96221407474
+
+It starts with a population of birds, each with a neural network as its brain. Through multiple generations, the 
+AI evolves by selecting the fittest birds and using genetic algorithms to create offspring. The AI learns to play 
+the game by improving its neural network's decision-making based on inputs like position and distance. 
+Eventually, it can autonomously play the game by making learned decisions, aiming for a high score.
+
 
 ## Getting Started
 To run the Flappy Bird AI, follow these steps:
